@@ -1,1 +1,1 @@
-
+showScene("start");
