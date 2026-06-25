@@ -1,97 +1,131 @@
 const story = {
-  start: {
-    background: "images/backgrounds/forest.jpg",
-    character: "images/characters/girl.png",
-    speaker: "Лія",
-    text: "Я чекала на тебе. Цей ліс не випадково привів тебе сюди.",
-    choices: [
-      { text: "Хто ти?", next: "who" },
-      { text: "Де я?", next: "where" }
-    ]
-  },
 
-  who: {
-    background: "images/backgrounds/forest.jpg",
-    character: "images/characters/girl.png",
-    speaker: "Лія",
-    text: "Мене звати Лія. Я провідниця між звичайним світом і Академією Місячного Світла.",
-    choices: [
-      { text: "Піти з Лією", next: "academy" },
-      { text: "Залишитися в лісі", next: "forestEnd" }
-    ]
-  },
+    start: {
+        background: "images/backgrounds/forest.png",
+        character: "images/characters/girl.png",
+        speaker: "Лія",
+        text: "Я чекала на тебе. Цей ліс не випадково привів тебе сюди.",
+        choices: [
+            {
+                text: "Хто ти?",
+                next: "who"
+            },
+            {
+                text: "Де я?",
+                next: "where"
+            }
+        ]
+    },
 
-  where: {
-    background: "images/backgrounds/forest.jpg",
-    character: "images/characters/girl.png",
-    speaker: "Лія",
-    text: "Ти на межі двох світів. Один шлях веде назад, інший — до знань, які змінюють долю.",
-    choices: [
-      { text: "Обрати шлях до знань", next: "academy" },
-      { text: "Повернутися назад", next: "forestEnd" }
-    ]
-  },
+    who: {
+        background: "images/backgrounds/forest.png",
+        character: "images/characters/girl.png",
+        speaker: "Лія",
+        text: "Мене звати Лія. Я провідниця між звичайним світом та Академією Місячного Світла.",
+        choices: [
+            {
+                text: "Піти з Лією",
+                next: "academy"
+            },
+            {
+                text: "Залишитися в лісі",
+                next: "forestEnd"
+            }
+        ]
+    },
 
-  academy: {
-    background: "images/backgrounds/academy.jpg",
-    character: "images/characters/boy.png",
-    speaker: "Кай",
-    text: "Нарешті ти тут. Академія приймає не всіх. Але якщо двері відчинилися — значить, у тебе є причина бути тут.",
-    choices: [
-      { text: "Я готова навчатися", next: "library" },
-      { text: "Я хочу дізнатися правду", next: "truth" }
-    ]
-  },
+    where: {
+        background: "images/backgrounds/forest.png",
+        character: "images/characters/girl.png",
+        speaker: "Лія",
+        text: "Ти знаходишся на межі двох світів. Один шлях веде назад, інший — до знань.",
+        choices: [
+            {
+                text: "Піти до Академії",
+                next: "academy"
+            },
+            {
+                text: "Повернутися",
+                next: "forestEnd"
+            }
+        ]
+    },
 
-  library: {
-    background: "images/backgrounds/library.jpg",
-    character: "images/characters/girl.png",
-    speaker: "Лія",
-    text: "У бібліотеці зберігаються книги, які відповідають лише тим, хто ставить правильні запитання.",
-    choices: [
-      { text: "Поставити запитання", next: "goodEnd" },
-      { text: "Відкрити першу книгу", next: "mysteryEnd" }
-    ]
-  },
+    academy: {
+        background: "images/backgrounds/academy.png",
+        character: "images/characters/boy.png",
+        speaker: "Кай",
+        text: "Ласкаво просимо до Академії. Сюди потрапляють лише ті, хто готовий змінити власну долю.",
+        choices: [
+            {
+                text: "Оглянути бібліотеку",
+                next: "library"
+            },
+            {
+                text: "Запитати про Академію",
+                next: "truth"
+            }
+        ]
+    },
 
-  truth: {
-    background: "images/backgrounds/library.jpg",
-    character: "images/characters/boy.png",
-    speaker: "Кай",
-    text: "Правда не завжди відкривається одразу. Іноді вона перевіряє, чи готова людина її витримати.",
-    choices: [
-      { text: "Я готова", next: "goodEnd" },
-      { text: "Мені страшно", next: "mysteryEnd" }
-    ]
-  },
+    library: {
+        background: "images/backgrounds/library.png",
+        character: "images/characters/girl.png",
+        speaker: "Лія",
+        text: "У цій бібліотеці зберігаються книги, що пам'ятають історію кожного світу.",
+        choices: [
+            {
+                text: "Відкрити стародавню книгу",
+                next: "goodEnd"
+            },
+            {
+                text: "Повернутися до Кая",
+                next: "truth"
+            }
+        ]
+    },
 
-  goodEnd: {
-    background: "images/backgrounds/academy.jpg",
-    character: "images/characters/girl.png",
-    speaker: "Лія",
-    text: "Ти зробила перший правильний вибір. Це лише початок твоєї історії.",
-    choices: [
-      { text: "Почати знову", next: "start" }
-    ]
-  },
+    truth: {
+        background: "images/backgrounds/academy.png",
+        character: "images/characters/boy.png",
+        speaker: "Кай",
+        text: "Академія існує для тих, хто готовий робити вибір і нести відповідальність за свої рішення.",
+        choices: [
+            {
+                text: "Я готова навчатися",
+                next: "goodEnd"
+            },
+            {
+                text: "Поки що ні",
+                next: "forestEnd"
+            }
+        ]
+    },
 
-  mysteryEnd: {
-    background: "images/backgrounds/library.jpg",
-    character: "images/characters/boy.png",
-    speaker: "Кай",
-    text: "Книга відкрилася сама. На першій сторінці було написано твоє ім’я.",
-    choices: [
-      { text: "Почати знову", next: "start" }
-    ]
-  },
+    goodEnd: {
+        background: "images/backgrounds/library.png",
+        character: "images/characters/girl.png",
+        speaker: "Лія",
+        text: "Твоя пригода лише починається. Попереду — нові відкриття, друзі та випробування.",
+        choices: [
+            {
+                text: "Почати спочатку",
+                next: "start"
+            }
+        ]
+    },
 
-  forestEnd: {
-    background: "images/backgrounds/forest.jpg",
-    character: "",
-    speaker: "Оповідач",
-    text: "Ти залишаєшся в лісі. Дорога назад ще є, але тепер ти знаєш: існує щось більше.",
-    choices: [
-      { text: "Почати знову", next: "start" }
-    ]
-  }
+    forestEnd: {
+        background: "images/backgrounds/forest.png",
+        character: "",
+        speaker: "Оповідач",
+        text: "Ти повертаєшся додому, але десь далеко Академія все ще чекає на тих, хто наважиться зробити перший крок.",
+        choices: [
+            {
+                text: "Почати спочатку",
+                next: "start"
+            }
+        ]
+    }
+
 };
